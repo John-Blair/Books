@@ -1,0 +1,67 @@
+﻿<div>
+    <div class="container">
+        <button ng-click="refresh()">Refresh</button> <button ng-click="create()">Create Book</button> 
+        <div class="row">
+            <div class="col-md-2">Id</div>
+            <div class="col-md-4">Title</div>
+            <div class="col-md-2">Published</div>
+        </div>
+        <div class="row" ng-repeat="book in bookList">
+            <div class="col-md-2">{{book.Id}}</div>
+            <div class="col-md-4">{{book.Title}}</div>
+            <div class="col-md-2">{{book.Published | date}} </div>
+            <div class="col-md-4">
+                <a href="#" ng-click="edit(book)">Edit</a>
+                <a href="#" ng-click="details(book)">Details</a>
+                <a href="#" ng-click="delete(book)">Delete</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" ng-show="editMode">
+        <h2>Edit</h2>
+        <div class="row">
+            <div class="col-md-2">Id</div>
+            <div class="col-md-10">Title</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">{{editBook.Id}}</div>
+            <div class="col-md-10"><input ng-model="editBook.Title" /></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><button ng-click="editSave()">Save</button></div>
+            <div class="col-md-6"><button ng-click="editCancel()">Cancel</button></div>
+        </div>
+    </div>
+
+    <div class="container" ng-show="detailsMode">
+        <h2>Details</h2>
+        <div class="row">
+            <div class="col-md-2">Id</div>
+            <div class="col-md-10">Title</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">{{editBook.Id}}</div>
+            <div class="col-md-10">{{editBook.Title}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><button ng-click="edit(editBook)">Edit</button></div>
+            <div class="col-md-6"><button ng-click="detailsCancel()">Cancel</button></div>
+        </div>
+    </div>
+
+
+    <div class="container" ng-show="createMode">
+        <h2>Create</h2>
+        <div class="row">
+            <div class="col-md-10">Title</div>
+        </div>
+        <div class="row">
+            <div class="col-md-10"><input ng-model="newBook.Title" /></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><button ng-click="save()">Save</button></div>
+            <div class="col-md-6"><button ng-click="createCancel()">Cancel</button></div>
+        </div>
+    </div>
+</div>

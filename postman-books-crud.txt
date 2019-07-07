@@ -1,0 +1,34 @@
+Gat all
+
+http://localhost:21576/api/booksapi
+
+Get one
+
+http://localhost:21576/api/booksapi/2
+
+Create
+POST
+http://localhost:21576/api/booksapi
+Content-Type:application/json
+content-length:86
+{
+    "Id": 8,
+    "Title": "post to create",
+    "Published": "2019-01-01T00:00:00"
+}
+
+
+Update:
+PUT
+Content-Type:application/json
+content-length:86
+http://localhost:21576/api/booksapi/8
+{
+    "Id": 8,
+    "Title": "put to update ",
+    "Published": "2019-01-01T00:00:00"
+}
+
+Delete:
+DELETE
+http://localhost:21576/api/booksapi/8
